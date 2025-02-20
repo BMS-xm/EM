@@ -1,0 +1,20 @@
+﻿{% extends "cafe/base.html" %}
+{% block title %}Создание{% endblock %}
+{% block content %}
+<h2>Новый заказ</h2>
+<form action="" method="post">
+{% csrf_token %}
+<label for="tn">Номер стола</label>
+<input type="text" name="table_number" id="tn">
+<br>
+{% for i in range %}
+<label for="i{{ i }}">Наименование {{ i }}</label>
+<input type="text" name="item{{ i }}" id="i{{ i }}">
+<label for="p{{ i }}">Стоимость {{ i }}</label>
+<input type="text" name="price{{ i }}" id="p{{ i }}">
+<br>
+{% endfor %}
+<input type="submit" value="Создать">
+</form>
+{% endblock %}
+

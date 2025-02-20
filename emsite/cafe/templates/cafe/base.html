@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Кафе{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/cafe">Главная</a>
+      <a href="/cafe/orders">Заказы</a>
+      <a href="/cafe/create">Создать</a>
+      <a href="/cafe/edit">Изменить</a>
+      <a href="/cafe/delete">Удалить</a>
+      <a href="/cafe/report">Отчет</a>
+      <a href="/cafe/search">Поиск</a>
+    </nav>
+    {% block content %}{% endblock %}
+  </body>
+</html>

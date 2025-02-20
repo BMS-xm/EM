@@ -1,0 +1,12 @@
+﻿{% extends "cafe/base.html" %}
+{% block title %}Заказы{% endblock %}
+{% block content %}
+<h2>Заказы</h2>
+<table border="1px" cellpadding="5px">
+<tr><th>ID Заказа</th><th>Номер стола</th><th>Список блюд</th><th>Общая стоимость</th><th>Статус</th></tr>
+{% for order in orders %}
+<tr><td>{{ order.id }}</td><td>{{ order.table_number }}</td><td>{% for item in order.item_set.all %}{{ item.item_name }}, {{ item.price }};<br>{% endfor %}</td><td>{{ order.total_price }}</td><td>{{ order.status }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
+

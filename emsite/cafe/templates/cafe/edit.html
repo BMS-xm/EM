@@ -1,0 +1,20 @@
+﻿{% extends "cafe/base.html" %}
+{% block title %}Изменение{% endblock %}
+{% block content %}
+<h2>Изменение статуса заказа</h2>
+<form action="" method="post">
+{% csrf_token %}
+<label for="oid">ID заказа</label>
+<input type="text" name="id" id="oid">
+<label for="st">Статус</label>
+<select name="status" id="st">
+<option value="В ожидании">В ожидании</option>
+<option value="Готово">Готово</option>
+
+<option value="Оплачено">Оплачено</option>
+
+</select>
+<input type="submit" value="Сохранить">
+</form>
+{% endblock %}
+
