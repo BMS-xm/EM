@@ -17,7 +17,7 @@ def create(request):
                 item_name = request.POST['item' + str(i)]
                 if item_name != '':
                     price = request.POST['price' + str(i)]
-                    if price.isdigit():
+                    if price.replace('.', '', 1).isdigit():
                         price = float(price)
                         total_price += price
                         item = Item(order_id=order, item_name=item_name[:50], price=price)
